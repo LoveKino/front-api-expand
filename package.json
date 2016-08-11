@@ -1,0 +1,24 @@
+{
+  "name": "front-api-expand",
+  "version": "0.0.1",
+  "description": "front api expand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoveKino/front-api-expand.git"
+  },
+  "keywords": [
+    "front",
+    "api",
+    "expand"
+  ],
+  "author": "ddchen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LoveKino/front-api-expand/issues"
+  },
+  "homepage": "https://github.com/LoveKino/front-api-expand#readme"
+}
