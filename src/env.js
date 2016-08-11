@@ -1,6 +1,6 @@
 'use strict';
 
-let front = require('../bridge');
+let front = require('./bridge');
 
 let Memory = require('./memory');
 
