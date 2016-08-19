@@ -10,8 +10,12 @@ let {
 
 let startMoment = startMomenter();
 
-let first = (memory, winId, entrance) => {
-    return startMoment().then(() => {
+let first = (memory, winId, config) => {
+    let entrance = config.entrance;
+    let network = config.nextwork || {};
+    return startMoment({
+        startTimeout: network.startTimeout || 10000
+    }).then(() => {
         // hack fail to load page in chrome
         if (window.location.href === 'data:text/html,chromewebdata') {
             throw new Error('fail to load page!');
