@@ -17,7 +17,15 @@ module.exports = (opts = {}) => {
 let syncCookie = (cookie) => {
     // TODO removeItem
     for (let i = 0; i < cookie.length; i++) {
-        document.cookie = cookie[i];
+        setCookie(cookie[i]);
+    }
+};
+
+// hack
+let setCookie = (value) => {
+    try {
+        document.cookie = value;
+    } catch (e) { // eslint-disable-line
     }
 };
 
