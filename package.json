@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/LoveKino/front-api-expand#readme",
     "link_dependencies": {
-        "general-bridge": "~0.0.1"
+        "general-bridge": "~0.0.1",
+        "doming": "~0.0.1"
     }
 }
