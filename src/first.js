@@ -10,17 +10,17 @@ let {
 
 let startMoment = startMomenter();
 
-let first = (memory, winId, config) => {
+let first = (store, config) => {
     let entrance = config.entrance;
     let network = config.nextwork || {};
     return startMoment({
         startTimeout: network.startTimeout || 10000
     }).then(() => {
-        // hack fail to load page in chrome
+        // TODO hack fail to load page in chrome
         if (window.location.href === 'data:text/html,chromewebdata') {
             throw new Error('fail to load page!');
         } else {
-            return isFirstInWindow(memory, winId).then(res => {
+            return isFirstInWindow(store).then(res => {
                 if (res) {
                     // sync page state
                     syncPageState(entrance);

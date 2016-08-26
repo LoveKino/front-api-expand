@@ -1,14 +1,14 @@
 'use strict';
 
 // TODO fix bad logic
-let isFirstInWindow = (memory, winId) => {
-    const notFirstKey = `${winId}-not-first`;
-    return memory.get(notFirstKey).then((res) => {
+let isFirstInWindow = (store) => {
+    const notFirstKey = 'not-first';
+    return store.get(notFirstKey).then((res) => {
         if (res) {
             // not first
             return false;
         } else {
-            return memory.set(notFirstKey, true).then(() => {
+            return store.set(notFirstKey, true).then(() => {
                 // first
                 return true;
             });
