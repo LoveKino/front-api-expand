@@ -11,13 +11,15 @@ let {
 } = require('electron');
 
 let {
-    front
+    pc
 } = require('general-bridge');
 
-let listen = (channel, consume) => {
-    ipcRenderer.on(channel, (event, arg) => {
-        consume(arg);
-    });
-};
+module.exports = (channelName, sandbox = {}) => {
+    let send = (data) => ipcRenderer.send(channelName, data);
 
-module.exports = (channelName, sandbox = {}) => front(channelName, sandbox, listen, ipcRenderer.send);
+    return pc((handle) => {
+        ipcRenderer.on(channelName, (event, arg) => {
+            handle(arg, send);
+        });
+    }, send, sandbox);
+};
