@@ -10,10 +10,13 @@ let Fs = require('./fs');
 
 let WinMemory = require('./winMemory');
 
+let bridge = require('./bridge');
+
 module.exports = {
     env,
     Memory,
     WinMemory,
     first,
-    Fs
+    Fs,
+    bridge
 };
